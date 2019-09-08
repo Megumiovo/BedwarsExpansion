@@ -1,0 +1,11 @@
+name: BedwarsExpansion
+main: com.taylorswiftcn.megumi.bedwarsexpansion.BedwarsExpansion
+version: 1.0
+author: megumi
+softdepend:
+  - BedwarsRel
+  - HolographicDisplays
+
+commands:
+  bwe:
+    description: show all command

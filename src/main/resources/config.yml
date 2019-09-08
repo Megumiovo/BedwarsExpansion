@@ -1,0 +1,189 @@
+Prefix: '[BedwarsExpansion]'
+
+WitherBow:
+  Enable: false
+  Time: 20
+  #游戏剩余多久后开启凋零弓模式(分钟)
+  Message:
+    - '&7================'
+    - '&a已进入凋零弓模式'
+    - '&7================'
+  Title-Main: '&8&l[ &a凋零弓模式 &8&l]'
+  Title-Sub: '&b所有箭矢将替换为凋零头颅!'
+  FadeIn: 1
+  #title淡入时间
+  Stay: 5
+  #title显示时间
+  FadeOut: 1
+  #title:淡出时间
+
+LobbyItem:
+#大厅菜单
+  Enable: false
+  Slot: 4
+  #物品位置
+  Command: 'bs lobby'
+  #命令
+  ID: 336
+  Data: 0
+  Name: '&8&l[ &a戰爭世界 &8&l]'
+  Lore:
+    - ' '
+
+CustomCommand:
+#自定义命令
+  Enable: false
+  Start:
+  #游戏开始时执行的命令
+    - 'op:say &a开始'
+    - 'player:say &a开始'
+    - 'console:say %player% &a开始'
+  End:
+    #游戏结束时执行的命令
+    - 'op:say &aGame end!'
+    - 'player:say &aGame end!'
+    - 'console:say %player% &aGame end!'
+
+  Timing:
+  #定时命令
+  #旁观者无效
+    cmd1:
+      Time: 300
+      #剩余多少秒执行开始执行(秒)
+      Commands:
+      #执行的命令
+        - 'op:say 1'
+        - 'player:say 2'
+        - 'console:say %player% 3'
+    cmd2:
+      Time: 600
+      Commands:
+        - 'op:say a'
+        - 'player:say b'
+        - 'console:say %player% c'
+
+CustomHealth:
+#自定义血量
+  Enable: false
+  Default-Health: 20
+  #默认血量
+  Message:
+    - '&7================'
+    - '&a所有玩家血量上限为 %max%'
+    - '&7================'
+  Title-Main: '&8&l[ &a血量提升 &8&l]'
+  Title-Sub: '&b当前最大血量上限为 %max%'
+  FadeIn: 1
+  Stay: 5
+  FadeOut: 1
+  #血量发生改变时,发送的消息和title
+
+  Timing:
+  #定时修改最大血量
+  #旁观者无效
+    health1:
+      Time: 1200
+      #剩余多少秒执行开始修改(秒)
+      Health: 50
+      #修改的最大血量值
+    health2:
+      Time: 600
+      Health: 30
+
+Spectator:
+#旁观者
+  Enable: false
+  WatchPlayer: '&a正在观看 %player% 视角,按shift可退出观看'
+  #actionbar消息
+
+  Tool:
+  #观察者工具
+    Enable: false
+    Slot: 5
+    #工具位置
+    Command: 'bs spectator'
+    #右键执行的命令
+    ID: 404
+    Data: 0
+    Name: '&8&l[&4旁观者菜单&8&l]'
+    Lore:
+      - ' '
+
+AttackInfo:
+#战斗信息
+  Enable: false
+  MeleeHolo: '- %damage% ❤'
+  #近战攻击全息伤害显示
+  BowTitle:
+  #远程攻击Title消息
+    Title-Main: ''
+    Title-Sub: '- %damage% ❤'
+    FadeIn: 0
+    Stay: 1
+    FadeOut: 0
+
+PositionProtect:
+#位置保护
+  Enable: false
+  SpawnRange: 2
+  #出身点保护范围
+  ResourceRange: 1
+  #资源点保护范围
+  Message: '&a你不能在此处放置方块'
+
+GameOverMessage:
+#结束游戏数据显示
+  Enable: false
+  Format-Rank: '          &a&l%i%.%team%&f|%player% &7- &c击杀&f: %kill%'
+  #击杀排行格式
+  #%i% 为排名变量
+  Amount-Rank: 3
+  #排行显示前几
+  List:
+  #游戏结束消息
+  #%kill_rank%
+    - "&a\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac"
+    - "                             &e&l起床战争"
+    - " "
+    - "                             恭喜 %win_team% 获得胜利"
+    - "                     队伍成员:%team_players%"
+    - "                     队伍击杀总数: %team_kill%"
+    - " "
+    - "%kill_rank%"
+    - " "
+    - "&a\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac"
+
+ItemGift:
+#物品馈赠
+  Enable: false
+  RespawnGive: true
+  #重生后是否再次給予
+  Helmet:
+    ID: 298
+    Data: 0
+    Name: '&f头盔'
+  Chestplate:
+    ID: 299
+    Data: 0
+    Name: '&f胸甲'
+  Leggings:
+    ID: 300
+    Data: 0
+    Name: '&f护腿'
+  Boots:
+    ID: 301
+    Data: 0
+    Name: '&f靴子'
+
+  Item:
+  #其他馈赠物品
+    item1:
+      ID: 274
+      Data: 0
+      Amount: 1
+      Name: '&f洛阳镐'
+    item2:
+      ID: 272
+      Data: 0
+      Amount: 1
+      Name: '&f石中剑'

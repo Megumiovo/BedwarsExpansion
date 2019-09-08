@@ -1,0 +1,4 @@
+AdminHelp:
+- '/bwe reload - 重载插件'
+Message:
+  NoPermission: '&3你没有权限: %s%'
